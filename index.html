@@ -4,18 +4,21 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Default title</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Roboto:wght@300&amp;display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/icon.css"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/icon.css"/><link rel="preconnect" href="https://fonts.gstatic.com">
-  </head><link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+  </head>
   <body>
-    <wrapper class="wrapper">
+    <div class="wrapper">
       <header class="header">
         <div class="container">
           <div class="header__container">
             <div class="logo"><img class="logo__img" src="img/water.png" alt=""/><span class="logo__text">Fitness</span></div>
             <div class="nav__wrap"><a class="nav__item">About</a><a class="nav__item">How it works</a><a class="nav__item">Services</a><a class="nav__item">Fqo</a><a class="nav__item">Contact</a></div>
+            <button class="hamburger hamburger--collapse" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
           </div>
           <div class="fon__text">
             <div class="fon__text__one">
@@ -52,7 +55,7 @@
             </div>
           </div>
           <div class="aside">
-            <div class="aside__block">
+            <div class="aside__block fill">
               <p class="aside__subject">it’s all about</p><span class="aside__title">fitness first</span>
               <div class="aside__water-img"><img src="img/water-gray.png" alt=""/></div>
               <div class="block__text">
@@ -121,7 +124,7 @@
               <div class="logan__texttwo">
                 <div class="text__two">
                   <p class="text__paragraf">track your</p>
-                  <p class="text__title">get involved in your</p>
+                  <p class="text__title__two">get involved in your</p>
                   <div class="text__icon"><i class="icon-strawberry"></i></div>
                   <p class="text__excerptwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur.</p>
                 </div>
@@ -129,7 +132,7 @@
             </div>
             <div class="kate__pictwo"><img class="kate__img" src="img/pineapple.png" alt=""/>
               <div class="kate__texttwo">
-                <div class="text__flex">
+                <div class="text__flex__two">
                   <div class="text__desc">
                     <div class="desc__paragraf">
                       <p class="text__paragraftwo">improve your</p>
@@ -167,7 +170,7 @@
             </div>
           </div>
           <div class="container__form">
-            <input class="for__text" type="text" placeholder="Your name"/>
+            <input class="form__text" type="text" placeholder="Your name"/>
             <input class="form__email" type="email" placeholder="Your Email"/>
             <div class="container__button">
               <button class="form__button">Join Newsletter<i class="fas fa-chevron-circle-right"></i></button>
@@ -175,6 +178,7 @@
           </div>
         </div>
       </div>
-    </wrapper>
+    </div>
+    <script src="js/script.js"></script>
   </body>
 </html>

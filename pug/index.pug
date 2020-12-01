@@ -4,7 +4,7 @@ include mixins/mixins
 html(lang="en")
   include includes/head
   body
-    wrapper.wrapper
+    div.wrapper
       header.header
         div.container
           .header__container
@@ -17,6 +17,10 @@ html(lang="en")
               a.nav__item Services
               a.nav__item Fqo
               a.nav__item Contact
+            button.hamburger.hamburger--collapse(type='button')
+              span.hamburger-box
+                span.hamburger-inner
+
           .fon__text
             .fon__text__one
               h1.fon__zogo Fitness in a can
@@ -50,9 +54,8 @@ html(lang="en")
               p.block__paragraf Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, illo Lorem, ipsum Lorem ipsum dolor sit amet.
               p.block__but Start now →
       
-
           .aside
-            .aside__block
+            .aside__block.fill
               p.aside__subject it’s all about
               span.aside__title fitness first
               .aside__water-img
@@ -114,14 +117,14 @@ html(lang="en")
               .logan__texttwo
                 .text__two
                   p.text__paragraf track your
-                  p.text__title get involved in your
+                  p.text__title__two get involved in your
                   .text__icon
                     i.icon-strawberry
                   p.text__excerptwo Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur.
             .kate__pictwo
               img.kate__img(src="img/pineapple.png", alt="")
               .kate__texttwo
-                .text__flex
+                .text__flex__two
                   .text__desc
                     .desc__paragraf
                       p.text__paragraftwo improve your
@@ -152,8 +155,10 @@ html(lang="en")
                 i.fab.fa-youtube
                 i.fab.fa-invision
           .container__form
-            input.for__text(type="text" placeholder="Your name")
+            input.form__text(type="text" placeholder="Your name")
             input.form__email(type="email" placeholder="Your Email")
             .container__button
               button.form__button Join Newsletter
                 i.fas.fa-chevron-circle-right
+
+    script(src="js/script.js")

@@ -1,4 +1,63 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icons/icomoon.woff?uyvug5") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "";
+  color: #ccc;
+}
+
+.icon-strawberry:before {
+  content: "";
+}
+
+.icon-water:before {
+  content: "";
+  color: #fd634e;
+}
+
+.icon-case:before {
+  content: "";
+  color: #fff;
+  font-size: 30px;
+}
+
+.icon-cloud:before {
+  content: "";
+  color: #fff;
+  font-size: 30px;
+}
+
+.icon-message:before {
+  content: "";
+  color: #fff;
+  font-size: 30px;
+}
+
+.icon-speed:before {
+  content: "";
+  color: #fff;
+  font-size: 30px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -28,6 +87,110 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #fff;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+ * Collapse
+ */
+.hamburger--collapse .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--collapse .hamburger-inner::after {
+  top: -20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+}
+.hamburger--collapse .hamburger-inner::before {
+  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--collapse.is-active .hamburger-inner {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--collapse.is-active .hamburger-inner::after {
+  top: 0;
+  opacity: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+}
+.hamburger--collapse.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-90deg);
+  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger {
+  display: none;
 }
 
 .logo {
@@ -171,6 +334,11 @@ body {
   border-bottom: 1px solid #a2ca28;
 }
 
+.block__text {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
 .aside__pictext {
   display: flex;
   align-items: center;
@@ -181,16 +349,16 @@ body {
 }
 
 .aside__block {
-  padding: 30px;
+  margin: 30px;
   background: #ffffff;
   text-align: center;
-  width: 40%;
   box-sizing: border-box;
+  margin-top: 50px;
 }
 
 .aside__img {
   position: relative;
-  width: 60%;
+  width: 100%;
 }
 
 .aside__image {
@@ -242,7 +410,7 @@ body {
 .kate__text {
   display: flex;
   justify-content: center;
-  padding: 30px 0;
+  margin: 0 0;
 }
 
 .kate__picture {
@@ -265,14 +433,10 @@ body {
   text-transform: uppercase;
 }
 
-.text__desc {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .text__icon {
   font-size: 30px;
+  margin-left: 40px;
+  margin-top: -120px;
 }
 
 .text__excerp {
@@ -344,6 +508,13 @@ body {
   background: #a2ca28;
   margin: 0 auto;
   max-width: 700px;
+}
+
+.text__title__two {
+  color: #a2ca28;
+  font-size: 35px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
 }
 
 .logan__blocktwo {
@@ -487,34 +658,38 @@ body {
   padding: 18px 20px;
   background: #2e3192;
   border-radius: 28px;
+  cursor: pointer;
 }
 
 .fab.fa-twitter {
   padding: 18px 20px;
   background: #00aeef;
   border-radius: 28px;
+  cursor: pointer;
 }
 
 .fab.fa-youtube {
   padding: 18px 20px;
   background: #ed3123;
   border-radius: 28px;
+  cursor: pointer;
 }
 
 .fab.fa-invision {
   padding: 18px 20px;
   background: #171a8f;
   border-radius: 28px;
+  cursor: pointer;
 }
 
 .container__form {
   margin-top: 50px;
   display: flex;
-  margin-left: 355px;
+  justify-content: flex-end;
   padding-bottom: 250px;
 }
 
-.for__text {
+.form__text {
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
   padding: 16px 20px;
@@ -545,63 +720,164 @@ body {
   margin-left: 10px;
 }
 
-@font-face {
-  font-family: "icomoon";
-  src: url("../fonts/icons/icomoon.woff?uyvug5") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-[class^=icon-], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@media screen and (max-width: 992px) {
+  .hamburger {
+    display: inline-block;
+  }
 
-.icon-user:before {
-  content: "";
-  color: #ccc;
-}
+  .nav__wrap {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(65, 30, 30, 0.4);
+    transition: 0.4s;
+  }
 
-.icon-strawberry:before {
-  content: "";
-}
+  .nav__wrap.is-active {
+    left: 0;
+  }
 
-.icon-water:before {
-  content: "";
-  color: #fd634e;
+  .nav__item {
+    margin-top: 10px;
+  }
 }
+@media screen and (max-width: 992px) {
+  .container {
+    margin: 0 auto;
+    max-width: 992px;
+  }
 
-.icon-case:before {
-  content: "";
-  color: #fff;
-  font-size: 30px;
-}
+  .block__icontext {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-basis: 250px;
+    justify-content: center;
+  }
 
-.icon-cloud:before {
-  content: "";
-  color: #fff;
-  font-size: 30px;
-}
+  .block__icons {
+    max-width: 150px;
+  }
 
-.icon-message:before {
-  content: "";
-  color: #fff;
-  font-size: 30px;
-}
+  .block__icontext {
+    text-align: center;
+  }
 
-.icon-speed:before {
-  content: "";
-  color: #fff;
-  font-size: 30px;
+  .aside, .aside__two {
+    display: block;
+  }
+
+  .aside__img {
+    width: 100%;
+  }
+
+  .aside__two {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .container__block {
+    display: block;
+    justify-content: center;
+  }
+
+  .pic__text, .pic__title {
+    max-width: 100%;
+  }
+
+  .fon__zogo {
+    font-size: 25px;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  .fon__zogo__two {
+    font-size: 12px;
+  }
+
+  .kate__tape {
+    display: block;
+  }
+
+  .kate__img, .juceap, .juceap__two {
+    max-height: 350px;
+  }
+
+  .logan__block {
+    margin-top: 0;
+  }
+
+  .kate__flex {
+    text-align: center;
+  }
+
+  .text__desc {
+    margin-top: 40px;
+  }
+
+  .logan__text {
+    margin: 0 20px;
+    padding-bottom: 30px;
+  }
+
+  .text__flex {
+    padding: 0 20px;
+  }
+
+  .text__title__two {
+    max-width: 250px;
+  }
+
+  .text__icon {
+    margin-top: -140px;
+  }
+
+  .logan__texttwo, .kate__texttwo, .text__excerptwo {
+    margin-bottom: 0;
+    padding-bottom: 10px;
+  }
+
+  .picture__text {
+    margin: 0 auto;
+    max-width: 300px;
+    text-align: center;
+    margin-top: 70px;
+  }
+
+  .ceape, .container__icon, .container__title {
+    margin: 0 30px;
+  }
+
+  .fill {
+    padding-top: 30px;
+  }
+
+  .container__form {
+    display: block;
+    margin-left: 25px;
+  }
+
+  .form__email, .container__button {
+    margin-top: 10px;
+  }
+
+  .ceape, .container__icon {
+    margin-top: 20px;
+  }
+
+  .form__email {
+    padding-right: 80px;
+  }
+
+  .form__button {
+    margin-left: 35px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
